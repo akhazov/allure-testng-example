@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 import static io.qameta.allure.Allure.step;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author baev (Dmitry Baev)
@@ -30,6 +31,7 @@ public class SimpleTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        assertTrue(webDriver.getTitle().contains("Яндекс"));
         webDriver.close();
     }
 }
