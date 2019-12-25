@@ -20,13 +20,13 @@ public class SimpleTest {
         step("step 1");
         step("step 2");
         WebDriverManager.firefoxdriver().setup();
-        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+//        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
         WebDriver webDriver = new FirefoxDriver();
         webDriver.manage().window().setSize(new Dimension(1366,768));
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDriver.get("http://ya.ru");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
