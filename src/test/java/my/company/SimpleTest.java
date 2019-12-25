@@ -1,6 +1,12 @@
 package my.company;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 import static io.qameta.allure.Allure.step;
 
@@ -13,6 +19,18 @@ public class SimpleTest {
     public void simpleTest() {
         step("step 1");
         step("step 2");
+        WebDriverManager.firefoxdriver().setup();
+        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+        WebDriver webDriver = new FirefoxDriver();
+        webDriver.manage().window().setSize(new Dimension(1366,768));
+        webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        webDriver.get("http://ya.ru");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        webDriver.close();
     }
 }
 
