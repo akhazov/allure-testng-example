@@ -5,6 +5,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
+import tools.LayoutControl;
 
 import java.util.concurrent.TimeUnit;
 
@@ -32,6 +33,7 @@ public class SimpleTest {
             e.printStackTrace();
         }
         assertTrue(webDriver.getTitle().contains("Яндекс"));
+        LayoutControl.compareCurrentPageWithExpected("screenshot.png", webDriver);
         webDriver.close();
     }
 }
