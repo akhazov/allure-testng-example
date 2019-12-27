@@ -34,6 +34,8 @@ public class SimpleTest {
         }
         assertTrue(webDriver.getTitle().contains("Яндекс"));
         LayoutControl.compareCurrentPageWithExpected("screenshot.png", webDriver);
+        LayoutControl.compareCurrentPageWithExpected("screenshot1.png", webDriver);
+        LayoutControl.compareCurrentPageWithExpected("screenshot2.png", webDriver);
         webDriver.close();
     }
 }
